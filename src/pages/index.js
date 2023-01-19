@@ -13,7 +13,7 @@ function HomepageHeader() {
 			<div className="container">
 				<img
 					className={styles.heroImg}
-					src="https://www.endless-web-worlds.com/assets/img/Endless%20Web%20Worlds.png"
+					src="https://www.endless-web-worlds.com/assets/img/logo.png"
 				/>
 				<p className="hero__subtitle mb-4">{siteConfig.tagline}</p>
 				<br />
