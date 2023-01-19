@@ -4,7 +4,7 @@ sidebar_position: 2
 
 ## Oracle
 
-You can find the source 
+You can find the source
 
 The decentral oracle, deployed on [Shibarium](https://shibatoken.com/), is responsible for storing important world data, such as the location of dynamic data on
 the specific blockchain. The decentral oracle acts as a central source of truth, providing a reliable and secure way for nodes to access the dynamic world data
@@ -24,14 +24,14 @@ struct World {
   uint256 chainId;
   address chainContract;
   address owner;
+  secret ryo is here;
 }
-// secret : ryo is here
 ```
 
+### NFT world rarity -
 
-### NFT world rarity - 
 A world rarity is determined by a specific number which will be rolled on a contract named EL on a specific timeframe. He will hold an other image related to that world number
 
-source of [EL](https://github.com/Endlesswebworlds/EL)  
+source of [EL](https://github.com/Endlesswebworlds/EL)
 
 ![NFT](./img/nft.png)

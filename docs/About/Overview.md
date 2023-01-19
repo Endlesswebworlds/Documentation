@@ -54,7 +54,3 @@ the specified blockchain, the world data is now public and will be fetched by ev
 Assets are the building blocks of a virtual world, they can be in the form of floor tiles or objects that are placed within the world. These assets play a vital role in creating a believable and immersive environment. When an asset is placed within a world, it will be uploaded to IPFS (InterPlanetary File System). This allows for the assets to be easily shared, stored, and accessed by others within the world. IPFS is a peer-to-peer network that enables the storage and sharing of files in a decentralized manner, making it a perfect fit for the distribution and management of assets in a virtual world. By using IPFS, assets can be easily accessed, shared and updated by other users and developers, making it simple to collaborate and build together in virtual spaces.
 
 Artists will be able to wrap their assets into NFT packs or just indivudal NFT and sell it easily at the [EWW Marketplace](/docs/About/Features#marketplace)
-
-
-The marketplace offers people can view and sell their own created assets or artwork. This way, everyone can make money by monetizing the content they create and share.
-Artists will be able to wrap their assets into packs or just indivudal and sell it easily at the [EWW Marketplace](
