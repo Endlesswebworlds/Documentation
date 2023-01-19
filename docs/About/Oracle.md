@@ -25,6 +25,7 @@ struct World {
   address chainContract;
   address owner;
 }
+// secret : ryo is here
 ```
 
 
