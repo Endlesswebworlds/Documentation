@@ -24,14 +24,15 @@ struct World {
   uint256 chainId;
   address chainContract;
   address owner;
-  secret ryo is here;
 }
 ```
 
-### NFT world rarity -
+### A rare NFT world
 
-A world rarity is determined by a specific number which will be rolled on a contract named EL on a specific timeframe. He will hold an other image related to that world number
+A rare world has a 1 in 20,000 chance of being created during the process of "world minting." These worlds differ from the underlying base IPFS source and can have different metadata like Image, rarity_level : 1-1000 and can be dynamically added.
 
-source of [EL](https://github.com/Endlesswebworlds/EL)
+Base image:
 
 ![NFT](./img/nft.png)
+
+Rare imgage TBD
