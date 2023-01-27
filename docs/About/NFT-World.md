@@ -17,10 +17,10 @@ where virtual land is just as valuable as physical land.
 One of three possible realm worlds is available on the minting a world NFT. We hope to hold events, contests, and team-building exercises using this. Imagine
 having a realm dedicated to gaming competitions, another to educational pursuits, and yet another to artistic activities.
 
-<img src="https://ipfs.io/ipfs/bafybeiamw4ekqkulpeduylidtwwxcnmrdwge5mvqcb77b2ng7pwilagtvy" alt="drawing" 
-style="display:inline-block;" width="200"/> <img src="https://ipfs.io/ipfs/bafybeigv4ex2quyvo4q2e6l2ooyd4kqjobwqzmluplms3w3buafhhsrqyq" alt="drawing" 
-style="display:inline-block;" width="200"/> <img src="https://ipfs.io/ipfs/bafybeiglme5almhf3m2f3kql7aht2uujzjirpimqjyrh3gyvyppiq7q2pm" alt="drawing" 
-style="display:inline-block;" width="200"/>
+
+![Dream](./img/dream_nft.png)
+![Galaxy](./img/glaxy.png)
+![Mystery](./img/mystery.png)
 
 ### Special rarity
 
@@ -28,5 +28,4 @@ A rare world has a 1 in 10,000 chance of being created during the process of "wo
 You get something special from minting this : TBD
 
 First special image:
-
-<img src="https://ipfs.io/ipfs/bafybeial2eyapndu2w4bwedsl3xkmt4s2bqqptbtk6noidjubyyikign44" alt="drawing" width="200"/>
+![Mystery](./img/special_nft_1.png)
