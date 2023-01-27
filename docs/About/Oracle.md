@@ -26,13 +26,3 @@ struct World {
   address owner;
 }
 ```
-
-### A rare NFT world
-
-A rare world has a 1 in 20,000 chance of being created during the process of "world minting." These worlds differ from the underlying base IPFS source and can have different metadata like Image, rarity_level : 1-1000 and can be dynamically added.
-
-Base image:
-
-![NFT](./img/nft.png)
-
-Rare imgage TBD
