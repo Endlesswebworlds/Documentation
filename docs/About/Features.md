@@ -10,8 +10,12 @@ The platform offers a vast selection of web worlds in an overview for you to exp
 
 ### Marketplace
 
-The EWW Marketplace provides a platform for artists to easily monetize the content they create and share. They can package their assets into NFT packs or individual NFTs and sell them on the marketplace for others to purchase. This allows artists to make money from their creations and for others to access and use unique assets in their own virtual worlds. It's a convenient way to make the most of your creative work and earn money with it.
+The marketplace enables artists, developers, and prompt masters to monetize their creations easily. With the rise of virtual worlds, the need for unique and creative content has never been greater. The marketplace provides a platform for creators to package their assets or scripts into NFT packs or individual NFTs and sell them to others.
 
+It offers an opportunity for creators to make money from their work and for buyers to access and use unique assets in their own virtual worlds. The process is simple and convenient, allowing creators to showcase their work and earn a profit from it.
+
+Fee = 1%. 
+This fee is applied to one of three options based on the fair vote results: a burn of SHIB/BONE, a donation, or a holder distribution. This provides transparency and community involvement in the marketplace's operations.
 ## World builder
 
 The world builder is a powerful tool that allows game developers and creative people to create their own virtual environments. Users can construct their own unique and immersive environment by uploading and storing their own assets and objects, or by choosing from a library of pre-created assets.
