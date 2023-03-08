@@ -29,60 +29,104 @@ Ok that was easy ... let me explain the different hooks.
 
 ## Hooks
 
-`Start` = The code will be executed if the player enters a room
+`Create` = The code will be executed if the player enters a room
 
 `Destroy` = The code will be executed if the asset is destroyed
 
 `Interact` = The code will be executed if the player interacts with the object
 
-`Nearby` = The code will be executed if the player is nearby the object
+`Over` = The code will be executed if the player is over the object
 
-Please note : Room code will always execute on start hooks cant be changed here
+`Next` = The code will be executed if the player is next to the object
 
-## General
+Please note : World code will always execute on start hooks cant be changed here
 
-We offer a variety of functions that can be executed a world. These functions are general functions and can be executed on world or assets
+## Object classes
 
-| Name                                           | Description                                                                                                                              |
-| ---------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| displayBubble(string, assetId)                 | Displays a speech bubble on the asset by the given assetId                                                                               |
-| displayMessage(string)                         | Displays a messagebox message                                                                                                            |
-| displayDialog(title, message)                  | Displays a dialog message, can be in HTML format                                                                                         |
-| displayEventMessage(message)                   | Displays a event message, can be in HTML format                                                                                          |
-| displayConfirmDialog(message,option, callback) | Displays a confirm dialog with yes or no option. `callback` returns an boolean of `yes=true`. On `option={yesText : "Yes", noText:"No"}` |
-| moveTo(x,y,assetId)                            | Moves asset to x,y position                                                                                                              |
-| addAsset(x,y, ressourceId)                     | Adds an asset to the specific position                                                                                                   |
-| destroyAsset(assetId)                          | removes an asset                                                                                                                         |
-| applyStyle(str)                                | applies basic CSS style to the header use it like that `.btn-success{background-color:"red"}`.                                           |
+## Asset
+| Property        | Data Type | Description                          |
+|-----------------|-----------|--------------------------------------|
+| id              | string    | Asset ID                             |
+| worldId         | string    | World ID that the asset belongs to   |
+| mapPos          | MapPosition | Asset's position on the map          |
+| builderAssetId  | string    | ID of the related asset builder pack            |
+| isTile          | boolean   | Boolean indicating if the asset is a tile or not |
+| source          | string    | Source string of the asset, fetched from assetService |
+| data            | AssetData | Dynamic object containing data for the asset |
 
-### Special web3 functions
+## AssetData
+| Property        | Data Type | Description                          |
+|-----------------|-----------|--------------------------------------|
+| respawn         | RespawnData | Data for asset's respawn           |
+| direction       | DIRECTION | Asset's direction on the map          |
+| canAttack       | boolean   | Boolean indicating if the asset can attack or not |
+| moveable        | boolean   | Boolean indicating if the asset can be moved or not |
+| underlining     | boolean   | Boolean indicating if the asset is underlining or not |
+| hasCode         | boolean   | Boolean indicating if the asset has a code or not |
+| life            | number    | Current life of the asset            |
+| maxLife         | number    | Maximum life of the asset            |
+| x               | number    | Asset's x position on the map         |
+| y               | number    | Asset's y position on the map         |
+| zHeight         | number    | Asset's z height on the map           |
+| width           | number    | Asset's width on the map              |
+| height          | number    | Asset's height on the map             |
 
-EWW directly loaded the web3 script, therefore you can use web3js without the need to import it. We created some basic comfort functions that can be useful.
 
-It is important to connect at first :
+## Player
+| Property        | Data Type | Description                          |
+|-----------------|-----------|--------------------------------------|
+| id              | string    | Player ID                            |
+| name            | string    | Player's name                        |
+| worldId         | string    | World ID that the player belongs to  |
+| source          | string    | Source string of the player          |
+| mapPos          | MapPosition | Player's position on the map         |
+| direction       | DIRECTION | Player's direction on the map        |
+| walletAddress   | string    | Player's wallet address              |
+| data            | PlayerData | Dynamic object containing data for the player |
 
-HTTP : `web3ConnectHttp(URL)` or Websocket : `web3ConnectSocket(URL)` . This will return the basic
-[web3js object](https://web3js.readthedocs.io/en/v1.8.1/web3.html)
+PlayerData interface:
+| Property        | Data Type | Description                          |
+|-----------------|-----------|--------------------------------------|
+| life            | number    | Current life of the player           |
+| maxLife         | number    | Maximum life of the player           |
 
-| Name                                           | Description                                                                                      |
-| ---------------------------------------------- | ------------------------------------------------------------------------------------------------ |
-| DisplayWeb3ConnectionDialog()                  | Displays a connection dialog                                                                     |
-| hasAmountOf(CoinContract, amount)              | Checks if currentplayer hasAmount xy of specific coin                                            |
-| getNftCount(NFTContract)                       | Gets the count of a specific NFT                                                                 |
-| transferCoin(CoinContract, amount, playerName) | Transfers an amount of coins from the servernode wallet to x (function in review to check abuse) |
+## Variables
 
----
+| Name                  | Type              | Description                                            |
+|-----------------------|-------------------|--------------------------------------------------------|
+| $this                 | Asset      | Current asset                                   |
+| $thisObject           | Pixi.js map object| The asset map object                                          |
+| destroyedByPlayerId   | string? | Player id that destroyed the asset                   |
+| player                | Player      | Current player                                         |
+| playerObject          | Player     | Current player           map object                               |
+| players               | Player[] | List of players in the game                             |
+| assets                | Asset[] | List of assets in the game                              |
+| hunting               | boolean           | Flag to indicate if the asset is hunting the player       |
 
-## Assets
 
-These functions allow players to perform various actions and manipulations with the assets in the game, such as moving, modifying, and interacting with them.
-
-### Functions
-
-| Name                      | Description                                  |
-| ------------------------- | -------------------------------------------- |
-| displayBubbleSelf(string) | Display a speech bubble on the current asset |
-| moveToSelf(x,y)           | Moves the current asset to x,y position      |
-| destroySelf()             | Destroys the asset                           |
-
-TODO: attack
+## Functions
+| Name                  | Parameters              | Description                                           |
+|-----------------------|-------------------------|-------------------------------------------------------|
+| setProvider           | provider: `string`               | Change the web3 http provider                         |
+| hitPlayer             | playerId: `string`                | Send a request to hit a player                        |
+| addTokens             | tokenAddress: `string`             | Add a specific token address to the player's token list|
+| transferToken         | receiverAddress: `string`, tokenAddress: `string`, amount: `string`  | Transfer a token to a receiver address     |
+| warp                  | world: `string`, x: `number`, y: `number`             | Teleport the player to a specific location            |
+| warpToPlace           | x: `number`, y: `number`                    | Teleport the player to a specific location            |
+| showLink              | link: `string`                     | Open an external link                                 |
+| displaySpeechBubble   | text: `string`                     | Display a speech bubble with the specified text       |
+| displayEventMessage   | text: `string`                    | Display a message with the specified text             |
+| displayMessage        | text: `string`                    | Display a message with the specified text             |
+| showDialog            | title: `string`, body: `string`, buttons: `Button[]`     | Display a dialog with the specified title, body, and buttons |
+| attackPlayerIfNextTo  | None                    | Check if the player is next to the asset and attack it |
+| attackNextTo          | None                    | Move the asset towards the player and attack           |
+| moveTo                | x: `number`, y: `number`                    | Move the asset to a specific location                  |
+| isPlayerInRadius      | radius: `number`                  | Check if the player is within a specified radius of the asset |
+| huntPlayer            | radius: `number`                  | Hunt the player in the given radius                    |
+| executeIfPlayerInRadius| radius: `number`, func: `function`           | Execute a function if the player is within a specified radius of the asset |
+| moveToPlayerIfInRadius| radius: `number`                  | Move the asset towards the player if within a specified radius |
+| addPlayerMoveListner  | callback: `function`                | Listen to the player's movements                       |
+| addOpenAiAnswerListner| None                    | Listen to the player's messages and respond with OpenAI |
+| displayEffect         | mapPos: `{c:number,r:number}`, effectPath: `string`, duration: `number`, data: `todo` | Function to display a visual effect          |
+| getTokenBalance       | address: `string`, tokenAddress: `string`   | Function to get the token balance of an address and token |
+| getNFTCount           | address: `string`, nfttokenAddress: `string`| Function to get the number of NFTs owned by an address |
