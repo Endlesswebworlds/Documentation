@@ -51,6 +51,11 @@ const config = {
 	themeConfig:
 		/** @type {import('@docusaurus/preset-classic').ThemeConfig} */
 		({
+			colorMode: {
+				defaultMode: 'dark',
+				disableSwitch: true,
+				respectPrefersColorScheme: false,
+			},
 			navbar: {
 				title: '',
 				logo: {
@@ -65,10 +70,15 @@ const config = {
 						label: 'About',
 					},
 					{
-						to: 'docs/Tutorials/Overview',
+						to: 'docs/Code/Basics',
 						position: 'left',
-						label: 'Tutorials',
+						label: 'Code',
 					},
+					// {
+					// 	to: 'docs/Tutorials/Overview',
+					// 	position: 'left',
+					// 	label: 'Tutorials',
+					// },
 					{
 						to: 'docs/EWW-token/tokenomics',
 						position: 'left',
