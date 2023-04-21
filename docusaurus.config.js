@@ -131,11 +131,7 @@ const config = {
 							{
 								label: 'Own server',
 								to: '/docs/Tutorials/Own%20server',
-							},
-							{
-								label: 'Coding',
-								to: '/docs/Tutorials/Coding',
-							},
+							}
 						],
 					},
 					{
