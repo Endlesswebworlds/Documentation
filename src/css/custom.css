@@ -26,3 +26,7 @@
 	width: auto;
 	flex: inherit;
 }
+
+.d-flex {
+	display: flex;
+}

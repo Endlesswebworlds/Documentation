@@ -53,13 +53,9 @@ function HomepageHeader() {
 export default function Home() {
 	const { siteConfig } = useDocusaurusContext();
 	return (
-		<Layout title={`Eww docs`} description="Endless web worlds documentation">
+		<Layout title={`Eww docs`} description="Endless web worlds documentation" wrapperClassName='d-flex'>
 			<HomepageHeader />
 
-			<main>
-				<HomepageFeatures />
-
-			</main>
 		</Layout>
 	);
 }
