@@ -22,7 +22,9 @@ sidebar_position: 5
 | huntPlayer              | radius: `number`                                                                              | Hunt the player in the given radius                                        |
 | executeIfPlayerInRadius | radius: `number`, func: `function`                                                            | Execute a function if the player is within a specified radius of the asset |
 | moveToPlayerIfInRadius  | radius: `number`                                                                              | Move the asset towards the player if within a specified radius             |
-| addPlayerMoveListner    | callback: `function`                                                                          | Listen to the player's movements                                           |
+| playerMoved             | callback: `function`                                                                          | Listen to the player's movements                                           |
+| playerTalked            | callback: `function`                                                                          | Listen to the player's talk event                                          |
+| speechDisplayed         | callback: `function(test,name)`                                                               | Listen to the general speech bubble events                                 |
 | displayEffect           | effectPath: `string`,mapPos?: `{c:number,r:number}`, duration?: `number`, data?: `EffectData` | Display a visual effect, default on player position                        |
 | getTokenBalance         | address: `string`, tokenAddress: `string`                                                     | Function to get the token balance of an address and token                  |
 | getNFTCount             | address: `string`, nftAddress: `string`                                                       | Function to get the number of NFTs owned by an address                     |
