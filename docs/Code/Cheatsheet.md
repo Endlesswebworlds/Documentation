@@ -124,7 +124,7 @@ getState(): Object
 
 
 ### addQuest
-[QuestData](Interfaces#QuestData)[]
+[QuestData](#QuestData)[]
 ```ts
 // adds a quest to the player's quest log (default: current player)
 addQuest(questData: QuestData, playerId?: string)
@@ -145,7 +145,7 @@ hasQuest(questId: string, playerId: string = player.id): boolean
 ## Items
 
 ### addItem
-[AssetData](Interfaces#AssetData)[]
+[AssetData](#AssetData)[]
 ```ts
 // adds an item to the player's inventory (default: current player)
 addItem(assetData: AssetData, playerId?: string)
@@ -360,7 +360,7 @@ transferToken(tokenAddress: string, amount:number, http_provider:string, ewwLock
 ```
 Ask for further help here we TODO on how to
 
-# Interfaces
+## Interfaces
 
 ## Asset
 
@@ -478,12 +478,12 @@ export interface RespawnData {
 
 | Name                | Type                                                                      | Description                            |
 | ------------------- | ------------------------------------------------------------------------- | -------------------------------------- |
-| $this               | [Asset](Interfaces#asset)                                                 | Current asset object                   |
+| $this               | [Asset](#asset)                                                 | Current asset object                   |
 | $thisObject         | [Pixi.js Container](https://pixijs.download/dev/docs/PIXI.Container.html) | The asset container pixijs object      |
 | destroyedByPlayerId | string                                                                    | Player id that destroyed the asset     |
-| player              | [Player](Interfaces#player)                                               | Current player                         |
+| player              | [Player](#player)                                               | Current player                         |
 | playerObject        | [Pixi.js Container](https://pixijs.download/dev/docs/PIXI.Container.html) | Current player container object object |
-| players             | [Player](Interfaces#player)[]                                             | List of players in the game            |
-| assets              | [Asset](Interfaces#asset)[]                                               | List of assets in the game             |
+| players             | [Player](#player)[]                                             | List of players in the game            |
+| assets              | [Asset](#asset)[]                                               | List of assets in the game             |
 | gamefield           | HtmlElement (readonly)                                                    | The gamefield panel                    |
 
