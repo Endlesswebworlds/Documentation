@@ -405,6 +405,7 @@ interface Asset {
   source: string; // Source string of the asset, fetched from assetService
   data?: AssetData; // Dynamic object containing data for the asset
   getPosition() // get the {x,y} position of the asset
+  getSize() // get the size {widht, height} of the asset 
 }
 ```
 ## AssetData
