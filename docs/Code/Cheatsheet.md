@@ -41,6 +41,13 @@ displaySpeechBubble(text: string, name?: string, targetName?: string)
 // displays a common message box ( default: asset image)
 displayMessage(text: string, img?: string)
 ```
+
+### addTextToAsset
+```ts
+// adds a text to the asset (DEFAULT : current asset), returns an Pixi container, remove it with removePixiObjectFromAsset(obj)
+addTextToAsset(text: string, assetId?: string)
+```
+
 ---
 
 ## Movement / Warping
@@ -165,7 +172,6 @@ hasItem(assetId: string, playerId?: string): boolean
 ---
 ## Other functions
 
-
 ### sleep
 
 ```ts
@@ -269,6 +275,31 @@ showDialog({
 		}
 	}]
 })
+```
+---
+## Asset manipulations
+
+If you arent fimilar with Pixi.js give it a quick read, it is simple [Pixi.js Container](https://pixijs.download/dev/docs/PIXI.Container.html)
+
+### addImageToAsset
+
+```ts
+// // adds a image to the asset, with https path or base64, data : { width: 64, height: 64, x: -32, y: -64 } (DEFAULT : current asset), returns an Pixi container
+addImageToAsset(image:string, assetId?:string, data?: { width: 64, height: 64, x: -32, y: -64 })
+```
+
+### addPixiObjectToAsset
+
+```ts
+// // adds a pixi container to the asset (DEFAULT : current asset), returns an Pixi container
+addPixiObjectToAsset(pixiContainer:PixiContainer)
+```
+
+### removePixiObjectFromAsset
+
+```ts
+// // removes a pixi container from the asset (DEFAULT : current asset)
+removePixiObjectFromAsset(pixiContainer:PixiContainer)
 ```
 ---
 
@@ -478,12 +509,12 @@ export interface RespawnData {
 
 | Name                | Type                                                                      | Description                            |
 | ------------------- | ------------------------------------------------------------------------- | -------------------------------------- |
-| $this               | [Asset](#asset)                                                 | Current asset object                   |
+| $this               | [Asset](#asset)                                                           | Current asset object                   |
 | $thisObject         | [Pixi.js Container](https://pixijs.download/dev/docs/PIXI.Container.html) | The asset container pixijs object      |
 | destroyedByPlayerId | string                                                                    | Player id that destroyed the asset     |
-| player              | [Player](#player)                                               | Current player                         |
+| player              | [Player](#player)                                                         | Current player                         |
 | playerObject        | [Pixi.js Container](https://pixijs.download/dev/docs/PIXI.Container.html) | Current player container object object |
-| players             | [Player](#player)[]                                             | List of players in the game            |
-| assets              | [Asset](#asset)[]                                               | List of assets in the game             |
+| players             | [Player](#player)[]                                                       | List of players in the game            |
+| assets              | [Asset](#asset)[]                                                         | List of assets in the game             |
 | gamefield           | HtmlElement (readonly)                                                    | The gamefield panel                    |
 
