@@ -152,7 +152,7 @@ hasQuest(questId: string, playerId: string = player.id): boolean
 ## Items
 
 ### addItem
-[AssetData](#AssetData)[]
+[ItemData](#ItemData)[]
 ```ts
 // adds an item to the player's inventory (default: current player)
 addItem(assetData: AssetData, playerId?: string)
@@ -451,6 +451,18 @@ interface QuestData {
 }
 ```
 
+## ItemData
+
+```jsx
+interface ItemData {
+	id: string;
+	name: string;
+	description: string;
+	image?: string; // absolute https image path
+	action:()=>{}
+}
+```
+
 ## PlayerData
 
 ```jsx
@@ -474,7 +486,6 @@ export interface PlayerQuest {
 	name: string;
 	description: string;
 	image?: string;
-	action: () => void; // executes code e.g () => {moveTo(1,2)}
 }
 
 export interface PlayerWearable {
